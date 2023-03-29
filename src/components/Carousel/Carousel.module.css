@@ -1,0 +1,204 @@
+.carousel {
+  margin: 3rem 0;
+  height: 85vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.carouselItem {
+  border-radius: 2rem;
+  border: 2px solid #ccc;
+  font-size: 3.2rem;
+  width: 65vw;
+  position: absolute;
+  z-index: 5;
+
+}
+
+.carouselItem:not(.carouselItemLeft, .carouselItemRight, .carouselItemCenter, .animationCenterToLeft, .animationRightToCenter, .animationLeftToCenter, .animationCenterToRight) {
+  display: none;
+}
+
+.carouselItemCenter {
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 1;
+}
+
+
+.carouselItemLeft {
+  left: -53vw;
+  top: 50%;
+  translate: 0 -50%;
+  height: 70%;
+  animation: delayLoadPseudoItem 1s linear forwards;
+}
+
+.carouselItemRight {
+  right: -53vw;
+  top: 50%;
+  translate: 0 -50%;
+  height: 70%;
+  animation: delayLoadPseudoItem 1s linear forwards;
+}
+
+.carouselItem:nth-child(4n+1) {
+  background-color: yellow;
+}
+
+.carouselItem:nth-child(4n+2) {
+  background-color: aqua;
+}
+
+.carouselItem:nth-child(4n+3) {
+  background-color: green;
+}
+
+.carouselItem:nth-child(4n+4) {
+  background-color: bisque;
+}
+
+
+.animationCenterToLeft {
+  animation: centerToLeft 1s ease-in-out forwards;
+}
+
+.animationCenterToRight {
+  animation: centerToRight 1s ease-in-out forwards;
+}
+
+
+.animationRightToCenter {
+  animation: rightToCenter 1s ease-in-out forwards;
+}
+
+.animationLeftToCenter {
+  animation: leftToCenter 1s ease-in-out forwards;
+}
+
+@keyframes delayLoadPseudoItem {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: .75;
+  }
+}
+
+
+@keyframes centerToLeft {
+  from {
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: -53vw;
+    top: 50%;
+    translate: 0 -50%;
+    height: 70%;
+  }
+}
+
+@keyframes centerToRight {
+  from {
+    opacity: 1;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    height: 100%;
+  }
+
+  to {
+    opacity: 0;
+    right: -53vw;
+    top: 50%;
+    translate: 0 -50%;
+    height: 70%;
+  }
+}
+
+@keyframes rightToCenter {
+  from {
+    opacity: 0;
+    right: -53vw;
+    top: 50%;
+    translate: 0 -50%;
+    height: 70%;
+  }
+
+  to {
+    opacity: 1;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    height: 100%;
+  }
+}
+
+
+@keyframes leftToCenter {
+  from {
+    opacity: 0;
+    left: -53vw;
+    top: 50%;
+    translate: 0 -50%;
+    height: 70%;
+    width: 50vw;
+  }
+
+  to {
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    opacity: 1;
+  }
+}
+
+
+/* Carousel Buttons */
+
+.carousel button {
+  cursor: pointer;
+  top: 50%;
+  translate: 0 -50%;
+  position: absolute;
+  z-index: 10;
+  border-radius: 100%;
+  width: 4.8rem;
+  height: 4.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: #111;
+  color: #fff;
+  font-size: 2.4rem;
+  transition: all .2s;
+}
+
+.carousel button:hover {
+  scale: 1.05;
+}
+
+.carousel button:active {
+  scale: .95
+}
+
+.btnLeft {
+  left: 5vw;
+  box-shadow: -.2rem 0 1rem .75rem rgba(255, 255, 255, .6);
+}
+
+.btnRight {
+  right: 5vw;
+  box-shadow: .2rem 0 1rem .75rem rgba(255, 255, 255, .6);
+}

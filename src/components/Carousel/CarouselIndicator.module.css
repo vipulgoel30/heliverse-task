@@ -1,0 +1,18 @@
+.carouselIndicator {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem
+}
+
+.carouselIndicator div {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 100%;
+  background-color: #aaa;
+  transition: all .3s;
+}
+
+.carouselIndicator div.active {
+  scale: 1.33;
+  background-color: #fff;
+}
