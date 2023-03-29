@@ -7,13 +7,14 @@
 
 .carouselItem {
   border-radius: 2rem;
-  border: 2px solid #ccc;
+  border: 4px solid #ccc;
   font-size: 3.2rem;
-  width: 65vw;
+  width: 65%;
   position: absolute;
   z-index: 5;
-
 }
+
+
 
 .carouselItem:not(.carouselItemLeft, .carouselItemRight, .carouselItemCenter, .animationCenterToLeft, .animationRightToCenter, .animationLeftToCenter, .animationCenterToRight) {
   display: none;
@@ -32,7 +33,7 @@
   left: -53vw;
   top: 50%;
   translate: 0 -50%;
-  height: 70%;
+  height: 85%;
   animation: delayLoadPseudoItem 1s linear forwards;
 }
 
@@ -40,7 +41,7 @@
   right: -53vw;
   top: 50%;
   translate: 0 -50%;
-  height: 70%;
+  height: 85%;
   animation: delayLoadPseudoItem 1s linear forwards;
 }
 
@@ -103,7 +104,7 @@
     left: -53vw;
     top: 50%;
     translate: 0 -50%;
-    height: 70%;
+    height: 85%;
   }
 }
 
@@ -121,7 +122,7 @@
     right: -53vw;
     top: 50%;
     translate: 0 -50%;
-    height: 70%;
+    height: 85%;
   }
 }
 
@@ -131,7 +132,7 @@
     right: -53vw;
     top: 50%;
     translate: 0 -50%;
-    height: 70%;
+    height: 85%;
   }
 
   to {
@@ -150,7 +151,7 @@
     left: -53vw;
     top: 50%;
     translate: 0 -50%;
-    height: 70%;
+    height: 85%;
     width: 50vw;
   }
 
@@ -164,41 +165,32 @@
 }
 
 
-/* Carousel Buttons */
 
-.carousel button {
-  cursor: pointer;
+/* Carousel Button Container */
+
+.carouselBtnContainer {
+  width: 100%;
+  position: absolute;
   top: 50%;
   translate: 0 -50%;
-  position: absolute;
   z-index: 10;
-  border-radius: 100%;
-  width: 4.8rem;
-  height: 4.8rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  background-color: #111;
-  color: #fff;
-  font-size: 2.4rem;
-  transition: all .2s;
+  justify-content: space-between;
+  padding: 0 6%;
 }
 
-.carousel button:hover {
-  scale: 1.05;
-}
 
-.carousel button:active {
-  scale: .95
-}
+@media (max-width:425px) {
+  .carouselItem {
+    width: 100vw;
+  }
 
-.btnLeft {
-  left: 5vw;
-  box-shadow: -.2rem 0 1rem .75rem rgba(255, 255, 255, .6);
-}
+  .carouselItemLeft,
+  .carouselItemRight {
+    display: none;
+  }
 
-.btnRight {
-  right: 5vw;
-  box-shadow: .2rem 0 1rem .75rem rgba(255, 255, 255, .6);
+  .carouselBtnContainer {
+    padding: 0 4%;
+  }
 }

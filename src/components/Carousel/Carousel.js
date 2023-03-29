@@ -1,13 +1,14 @@
 import { useState, useReducer, useEffect } from "react";
 import classes from "./Carousel.module.css";
-import {
-  MdOutlineArrowBackIosNew,
-  MdOutlineArrowForwardIos,
-} from "react-icons/md";
+
 import {
   backwardAnimationHandler,
   forwardAnimationHandler,
 } from "./carouselAnimationFunctions";
+import {
+  CarouselButtonBackward,
+  CarouselButtonForward,
+} from "./CarouselButton";
 import CarouselIndicator from "./CarouselIndicators";
 
 const initialItemClasses = {
@@ -44,7 +45,7 @@ const Carousel = () => {
     };
   }, [activeItem]);
 
-  const leftBtnHandler = () => {
+  const backBtnHandler = () => {
     setActiveItem((curActiveItem) => {
       const nextActiveItem = curActiveItem === 1 ? 4 : curActiveItem - 1;
       backwardAnimationHandler(nextActiveItem, dispatchItemClasses, classes);
@@ -52,7 +53,7 @@ const Carousel = () => {
     });
   };
 
-  const rightBtnHandler = () => {
+  const forwardBtnHandler = () => {
     setActiveItem((curActiveItem) => {
       const nextActiveItem = curActiveItem === 4 ? 1 : curActiveItem + 1;
       forwardAnimationHandler(nextActiveItem, dispatchItemClasses, classes);
@@ -93,17 +94,13 @@ const Carousel = () => {
           Pseudo 4
         </div>
 
-        <button className={classes.btnLeft} onClick={leftBtnHandler}>
-          <MdOutlineArrowBackIosNew />
-        </button>
-        <button className={classes.btnRight} onClick={rightBtnHandler}>
-          <MdOutlineArrowForwardIos />
-        </button>
+        <div className={classes.carouselBtnContainer}>
+          <CarouselButtonBackward onClick={backBtnHandler} />
+          <CarouselButtonForward onClick={forwardBtnHandler} />
+        </div>
       </div>
 
-      {/* <div className={classes.carouselIndicatorContainer}> */}
       <CarouselIndicator activeItem={activeItem} />
-      {/* </div> */}
     </section>
   );
 };

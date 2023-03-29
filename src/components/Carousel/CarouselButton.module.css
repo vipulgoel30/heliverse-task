@@ -1,0 +1,32 @@
+ .btn {
+   cursor: pointer;
+   border-radius: 100%;
+   width: 4.4rem;
+   height: 4.4rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: none;
+   background-color: #111;
+   color: #fff;
+   font-size: 2.2rem;
+   transition: all .2s;
+ }
+
+ .btn:hover {
+   scale: 1.05;
+ }
+
+ .btn:active {
+   scale: .95
+ }
+
+ .btnLeft {
+   left: 5vw;
+   box-shadow: -.2rem 0 1rem .75rem rgba(255, 255, 255, .6);
+ }
+
+ .btnRight {
+   right: 5vw;
+   box-shadow: .2rem 0 1rem .75rem rgba(255, 255, 255, .6);
+ }
