@@ -219,8 +219,8 @@
     display: none;
   }
 
-  .carouselBtnContainer {
+  /* .carouselBtnContainer {
     justify-content: end;
     padding: 0 4%;
-  }
+  } */
 }
