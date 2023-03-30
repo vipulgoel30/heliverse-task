@@ -2,7 +2,7 @@ const forwardAnimationHandler = (nextActiveItem, disptchFunc, styleClasses) => {
   switch (nextActiveItem) {
     case 1:
       disptchFunc({
-        four: styleClasses.carouselItemCenter,
+        four: `${styleClasses.animationCarouselCenterFadeIn} ${styleClasses.carouselItemCenter}`,
         first: styleClasses.animationRightToCenter,
         pseudoSecondRight: styleClasses.carouselItemRight,
         pseudoFourLeft: styleClasses.carouselItemLeft,
@@ -10,7 +10,8 @@ const forwardAnimationHandler = (nextActiveItem, disptchFunc, styleClasses) => {
       break;
     case 2:
       disptchFunc({
-        second: styleClasses.carouselItemCenter,
+        second: `${styleClasses.animationCarouselCenterFadeOut} ${styleClasses.carouselItemCenter}`,
+        // second: styleClasses.carouselItemCenter,
         first: styleClasses.animationCenterToLeft,
         pseudoFirstLeft: styleClasses.carouselItemLeft,
         pseudoThirdRight: styleClasses.carouselItemRight,
@@ -18,7 +19,7 @@ const forwardAnimationHandler = (nextActiveItem, disptchFunc, styleClasses) => {
       break;
     case 3:
       disptchFunc({
-        second: styleClasses.carouselItemCenter,
+        second: `${styleClasses.animationCarouselCenterFadeIn} ${styleClasses.carouselItemCenter}`,
         third: styleClasses.animationRightToCenter,
         pseudoFourRight: styleClasses.carouselItemRight,
         pseudoSecondLeft: styleClasses.carouselItemLeft,
@@ -26,7 +27,8 @@ const forwardAnimationHandler = (nextActiveItem, disptchFunc, styleClasses) => {
       break;
     case 4:
       disptchFunc({
-        four: styleClasses.carouselItemCenter,
+        four: `${styleClasses.animationCarouselCenterFadeOut} ${styleClasses.carouselItemCenter}`,
+        // four: styleClasses.carouselItemCenter,
         third: styleClasses.animationCenterToLeft,
         pseudoThirdLeft: styleClasses.carouselItemLeft,
         pseudoFirstRight: styleClasses.carouselItemRight,
@@ -44,8 +46,9 @@ const backwardAnimationHandler = (
   switch (nextActiveItem) {
     case 1:
       disptchFunc({
+        first: `${styleClasses.animationCarouselCenterFadeOut} ${styleClasses.carouselItemCenter}`,
         second: styleClasses.animationCenterToRight,
-        first: styleClasses.carouselItemCenter,
+        // first: styleClasses.carouselItemCenter,
         pseudoSecondRight: styleClasses.carouselItemRight,
         pseudoFourLeft: styleClasses.carouselItemLeft,
       });
@@ -53,7 +56,7 @@ const backwardAnimationHandler = (
     case 2:
       disptchFunc({
         second: styleClasses.animationLeftToCenter,
-        third: styleClasses.carouselItemCenter,
+        third: `${styleClasses.animationCarouselCenterFadeIn} ${styleClasses.carouselItemCenter}`,
         pseudoThirdRight: styleClasses.carouselItemRight,
         pseudoFirstLeft: styleClasses.carouselItemLeft,
       });
@@ -61,7 +64,7 @@ const backwardAnimationHandler = (
     case 3:
       disptchFunc({
         four: styleClasses.animationCenterToRight,
-        third: styleClasses.carouselItemCenter,
+        third: `${styleClasses.animationCarouselCenterFadeOut} ${styleClasses.carouselItemCenter}`,
         pseudoFourRight: styleClasses.carouselItemRight,
         pseudoSecondLeft: styleClasses.carouselItemLeft,
       });
@@ -69,7 +72,7 @@ const backwardAnimationHandler = (
     case 4:
       disptchFunc({
         four: styleClasses.animationLeftToCenter,
-        first: styleClasses.carouselItemCenter,
+        first: `${styleClasses.animationCarouselCenterFadeIn} ${styleClasses.carouselItemCenter}`,
         pseudoFirstRight: styleClasses.carouselItemRight,
         pseudoThirdLeft: styleClasses.carouselItemLeft,
       });

@@ -46,7 +46,7 @@
   inset: 50%;
   translate: -50% -50%;
   z-index: 1;
-  animation: carouselCenteFadeInOut 0.75s ease-in-out forwards;
+  animation: carouselCenterFadeOut 0.75s ease-in-out forwards;
 }
 
 .carouselItemLeft {
@@ -66,6 +66,14 @@
   animation: delayLoadPseudoItem 1s ease-in-out forwards;
 }
 
+.animationCarouselCenterFadeOut {
+  animation: carouselCenterFadeOut 1s ease-in-out forwards;
+}
+
+.animationCarouselCenterFadeIn {
+  animation: carouselCenterFadeIn 1s ease-in-out forwards;
+}
+
 .animationCenterToLeft {
   animation: centerToLeft 1s ease-in-out forwards;
 }
@@ -82,19 +90,30 @@
   animation: leftToCenter 1s ease-in-out forwards;
 }
 
-@keyframes carouselCenteFadeInOut {
+@keyframes carouselCenterFadeOut {
   0% {
     opacity: 0;
-    filter: blur(15px);
+    filter: blur(1.5rem);
     scale: 0.985;
   }
   50% {
     opacity: 0.3;
-    filter: blur(5px);
+    filter: blur(0.6rem);
   }
   100% {
     opacity: 1;
     scale: 1;
+  }
+}
+
+@keyframes carouselCenterFadeIn {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    filter: blur(15px);
+    scale: 0.985;
   }
 }
 

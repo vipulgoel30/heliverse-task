@@ -50,7 +50,7 @@ const Carousel = () => {
         forwardAnimationHandler(nextActiveItem, dispatchItemClasses, classes);
         return nextActiveItem;
       });
-    }, 7000);
+    }, 5000);
 
     return () => {
       clearInterval(interval);
