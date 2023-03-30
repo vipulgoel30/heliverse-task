@@ -1,32 +1,40 @@
- .btn {
-   cursor: pointer;
-   border-radius: 100%;
-   width: 4.4rem;
-   height: 4.4rem;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   border: none;
-   background-color: #111;
-   color: #fff;
-   font-size: 2.2rem;
-   transition: all .2s;
- }
+.btn {
+  cursor: pointer;
+  border-radius: 100%;
+  width: 4.4rem;
+  height: 4.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: #111;
+  color: #fff;
+  font-size: 2.2rem;
+  transition: all 0.2s;
+}
 
- .btn:hover {
-   scale: 1.05;
- }
+.btn:hover {
+  scale: 1.05;
+}
 
- .btn:active {
-   scale: .95
- }
+.btn:active {
+  scale: 0.95;
+}
 
- .btnLeft {
-   left: 5vw;
-   box-shadow: -.2rem 0 1rem .75rem rgba(255, 255, 255, .6);
- }
+.btnLeft {
+  /* left: 5vw; */
+  box-shadow: -0.2rem 0 1rem 0.75rem rgba(255, 255, 255, 0.6);
+}
 
- .btnRight {
-   right: 5vw;
-   box-shadow: .2rem 0 1rem .75rem rgba(255, 255, 255, .6);
- }
+.btnRight {
+  /* right: 5vw;s */
+  box-shadow: 0.2rem 0 1rem 0.75rem rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 768px) {
+  .btn {
+    width: 3.6rem;
+    height: 3.6rem;
+    font-size: 1.8rem;
+  }
+}

@@ -1,16 +1,16 @@
 .carouselIndicator {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1.2rem;
   padding: 0 1rem;
 }
 
 .carouselIndicator div {
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1rem;
+  height: 1rem;
   border-radius: 100%;
   background-color: #aaa;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .carouselIndicator div.active {

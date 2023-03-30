@@ -14,9 +14,15 @@
   z-index: 5;
 }
 
-
-
-.carouselItem:not(.carouselItemLeft, .carouselItemRight, .carouselItemCenter, .animationCenterToLeft, .animationRightToCenter, .animationLeftToCenter, .animationCenterToRight) {
+.carouselItem:not(
+    .carouselItemLeft,
+    .carouselItemRight,
+    .carouselItemCenter,
+    .animationCenterToLeft,
+    .animationRightToCenter,
+    .animationLeftToCenter,
+    .animationCenterToRight
+  ) {
   display: none;
 }
 
@@ -27,7 +33,6 @@
   translate: -50% -50%;
   z-index: 1;
 }
-
 
 .carouselItemLeft {
   left: -53vw;
@@ -45,41 +50,55 @@
   animation: delayLoadPseudoItem 1s linear forwards;
 }
 
-.carouselItem:nth-child(4n+1) {
+.carouselItem:nth-child(4n + 1) {
   background-color: yellow;
 }
 
-.carouselItem:nth-child(4n+2) {
+.carouselItem:nth-child(4n + 2) {
   background-color: aqua;
 }
 
-.carouselItem:nth-child(4n+3) {
+.carouselItem:nth-child(4n + 3) {
   background-color: green;
 }
 
-.carouselItem:nth-child(4n+4) {
+.carouselItem:nth-child(4n + 4) {
   background-color: bisque;
 }
+/* 
+.carouselItem:nth-child(4n + 5) {
+  background-color: orange;
+}
 
+.carouselItem:nth-child(4n + 6) {
+  background-color: red;
+}
+
+.carouselItem:nth-child(4n + 7) {
+  background-color: blueviolet;
+}
+
+.carouselItem:nth-child(4n + 8) {
+  background-color: powderblue;
+} */
 
 .animationCenterToLeft {
-  animation: centerToLeft 1s ease-in-out forwards;
+  animation: centerToLeft 0.5s ease-in-out forwards;
 }
 
 .animationCenterToRight {
-  animation: centerToRight 1s ease-in-out forwards;
+  animation: centerToRight 0.5s ease-in-out forwards;
 }
 
-
 .animationRightToCenter {
-  animation: rightToCenter 1s ease-in-out forwards;
+  animation: rightToCenter 0.5s ease-in-out forwards;
 }
 
 .animationLeftToCenter {
-  animation: leftToCenter 1s ease-in-out forwards;
+  animation: leftToCenter 0.5s ease-in-out forwards;
 }
 
-@keyframes delayLoadPseudoItem {
+/* @keyframes delayLoadPseudoItem {
   from {
     opacity: 0;
   }
@@ -87,8 +106,7 @@
   to {
     opacity: .75;
   }
-}
-
+} */
 
 @keyframes centerToLeft {
   from {
@@ -99,12 +117,18 @@
     opacity: 1;
   }
 
-  to {
+  80% {
+    opacity: 0.75;
+    z-index: 10;
+  }
+
+  100% {
     opacity: 0;
     left: -53vw;
     top: 50%;
     translate: 0 -50%;
     height: 85%;
+    z-index: 10;
   }
 }
 
@@ -117,12 +141,17 @@
     height: 100%;
   }
 
+  80% {
+    opacity: 0.75;
+    z-index: 10;
+  }
   to {
     opacity: 0;
     right: -53vw;
     top: 50%;
     translate: 0 -50%;
     height: 85%;
+    z-index: 10;
   }
 }
 
@@ -144,7 +173,6 @@
   }
 }
 
-
 @keyframes leftToCenter {
   from {
     opacity: 0;
@@ -164,8 +192,6 @@
   }
 }
 
-
-
 /* Carousel Button Container */
 
 .carouselBtnContainer {
@@ -179,8 +205,7 @@
   padding: 0 6%;
 }
 
-
-@media (max-width:425px) {
+@media (max-width: 768px) {
   .carouselItem {
     width: 100vw;
   }
@@ -191,6 +216,6 @@
   }
 
   .carouselBtnContainer {
-    padding: 0 4%;
+    padding: 0 2%;
   }
 }
