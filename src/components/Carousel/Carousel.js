@@ -1,5 +1,17 @@
 import { useState, useReducer, useEffect } from "react";
 import classes from "./Carousel.module.css";
+import First from "./../../utils/CarouselImages/First.png";
+import Second from "./../../utils/CarouselImages/Second.png";
+import Third from "./../../utils/CarouselImages/Third.png";
+import Four from "./../../utils/CarouselImages/Four.png";
+import PseudoFirstLeft from "./../../utils/CarouselImages/PseudoFirstLeft.png";
+import PseudoFirstRight from "./../../utils/CarouselImages/PseudoFirstRight.png";
+import PseudoSecondLeft from "./../../utils/CarouselImages/PseudoSecondLeft.png";
+import PseudoSecondRight from "./../../utils/CarouselImages/PseudoSecondRight.png";
+import PseudoThirdLeft from "./../../utils/CarouselImages/PseudoThirdLeft.png";
+import PseudoThirdRight from "./../../utils/CarouselImages/PseudoThirdRight.png";
+import PseudoFourLeft from "./../../utils/CarouselImages/PseudoFourLeft.png";
+import PseudoFourRight from "./../../utils/CarouselImages/PseudoFourRight.png";
 
 import {
   backwardAnimationHandler,
@@ -13,8 +25,8 @@ import CarouselIndicator from "./CarouselIndicators";
 
 const initialItemClasses = {
   first: `${classes.carouselItemCenter}`,
-  pseudoSecond: `${classes.carouselItemRight}`,
-  pseudoFour: `${classes.carouselItemLeft}`,
+  pseudoSecondRight: `${classes.carouselItemRight}`,
+  pseudoFourLeft: `${classes.carouselItemLeft}`,
 };
 
 const actionItemClasses = (prevState, action) => {
@@ -64,10 +76,28 @@ const Carousel = () => {
   return (
     <section>
       <div className={classes.carousel}>
-        <div className={`${classes.carouselItem}  ${itemClasses.first}`}>
-          Container 1
-        </div>
-        <div className={`${classes.carouselItem}  ${itemClasses.second} `}>
+        <img
+          src={First}
+          alt=""
+          className={`${classes.carouselItem}  ${itemClasses.first}`}
+        />
+        <img
+          src={Second}
+          alt=""
+          className={`${classes.carouselItem}  ${itemClasses.second}`}
+        />
+        <img
+          src={Third}
+          alt=""
+          className={`${classes.carouselItem}  ${itemClasses.third}`}
+        />
+        <img
+          src={Four}
+          alt=""
+          className={`${classes.carouselItem}  ${itemClasses.four}`}
+        />
+        {/* </div> */}
+        {/* <div className={`${classes.carouselItem}  ${itemClasses.second} `}>
           Container 2
         </div>
         <div className={`${classes.carouselItem}  ${itemClasses.third}`}>
@@ -75,9 +105,49 @@ const Carousel = () => {
         </div>
         <div className={`${classes.carouselItem}  ${itemClasses.four}`}>
           Container 4
-        </div>
+        </div> */}
+        <img
+          src={PseudoFirstLeft}
+          alt=""
+          className={`${classes.carouselItem}  ${itemClasses.pseudoFirstLeft}`}
+        />
+        <img
+          src={PseudoFirstRight}
+          alt=""
+          className={`${classes.carouselItem}  ${itemClasses.pseudoFirstRight}`}
+        />
+        <img
+          src={PseudoSecondLeft}
+          alt=""
+          className={`${classes.carouselItem}  ${itemClasses.pseudoSecondLeft}`}
+        />
+        <img
+          src={PseudoSecondRight}
+          alt=""
+          className={`${classes.carouselItem}  ${itemClasses.pseudoSecondRight}`}
+        />
+        <img
+          src={PseudoThirdLeft}
+          alt=""
+          className={`${classes.carouselItem}  ${itemClasses.pseudoThirdLeft}`}
+        />
+        <img
+          src={PseudoThirdRight}
+          alt=""
+          className={`${classes.carouselItem}  ${itemClasses.pseudoThirdRight}`}
+        />
+        <img
+          src={PseudoFourLeft}
+          alt=""
+          className={`${classes.carouselItem}  ${itemClasses.pseudoFourLeft}`}
+        />
+        <img
+          src={PseudoFourRight}
+          alt=""
+          className={`${classes.carouselItem}  ${itemClasses.pseudoFourRight}`}
+        />
 
-        <div
+        {/* <div
           className={`${classes.carouselItem}   ${itemClasses.pseudoFirst} `}
         >
           Pseudo 1
@@ -92,7 +162,7 @@ const Carousel = () => {
         </div>
         <div className={`${classes.carouselItem}   ${itemClasses.pseudoFour}`}>
           Pseudo 4
-        </div>
+        </div> */}
 
         <div className={classes.carouselBtnContainer}>
           <CarouselButtonBackward onClick={backBtnHandler} />

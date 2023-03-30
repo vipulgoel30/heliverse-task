@@ -1,17 +1,34 @@
 .carousel {
-  margin: 3rem 0;
-  height: 85vh;
+  margin: 2rem 0;
+  height: 55rem;
+  /* height: 85vh; */
   position: relative;
   overflow: hidden;
 }
 
 .carouselItem {
-  border-radius: 2rem;
-  border: 4px solid #ccc;
-  font-size: 3.2rem;
-  width: 65%;
   position: absolute;
   z-index: 5;
+  width: 65%;
+  overflow: hidden;
+}
+
+.carouselItem:nth-child(1) {
+  border-radius: 1.1rem;
+  border: 1.2rem solid #9b9b9b;
+}
+
+.carouselItem:nth-child(2) {
+  border: 1.2rem solid #fff;
+  border-radius: 0.651584rem;
+}
+.carouselItem:nth-child(3) {
+  border: 1.2rem solid #fff;
+  border-radius: 1.2rem;
+}
+.carouselItem:nth-child(4) {
+  border: 0.8rem solid #9b9b9b;
+  border-radius: 0.8rem;
 }
 
 .carouselItem:not(
@@ -28,104 +45,69 @@
 
 .carouselItemCenter {
   height: 100%;
-  top: 50%;
-  left: 50%;
+  inset: 50%;
   translate: -50% -50%;
   z-index: 1;
 }
 
 .carouselItemLeft {
-  left: -53vw;
-  top: 50%;
+  inset: 50% 0;
   translate: 0 -50%;
   height: 85%;
+  width: 13%;
   animation: delayLoadPseudoItem 1s linear forwards;
 }
 
 .carouselItemRight {
-  right: -53vw;
+  right: 0;
   top: 50%;
   translate: 0 -50%;
   height: 85%;
-  animation: delayLoadPseudoItem 1s linear forwards;
+  width: 13%;
+  animation: delayLoadPseudoItem 1s ease-in-out forwards;
 }
-
-.carouselItem:nth-child(4n + 1) {
-  background-color: yellow;
-}
-
-.carouselItem:nth-child(4n + 2) {
-  background-color: aqua;
-}
-
-.carouselItem:nth-child(4n + 3) {
-  background-color: green;
-}
-
-.carouselItem:nth-child(4n + 4) {
-  background-color: bisque;
-}
-/* 
-.carouselItem:nth-child(4n + 5) {
-  background-color: orange;
-}
-
-.carouselItem:nth-child(4n + 6) {
-  background-color: red;
-}
-
-.carouselItem:nth-child(4n + 7) {
-  background-color: blueviolet;
-}
-
-.carouselItem:nth-child(4n + 8) {
-  background-color: powderblue;
-} */
 
 .animationCenterToLeft {
-  animation: centerToLeft 0.5s ease-in-out forwards;
+  animation: centerToLeft 1s ease-in-out forwards;
 }
 
 .animationCenterToRight {
-  animation: centerToRight 0.5s ease-in-out forwards;
+  animation: centerToRight 1s ease-in-out forwards;
 }
 
 .animationRightToCenter {
-  animation: rightToCenter 0.5s ease-in-out forwards;
+  animation: rightToCenter 1s ease-in-out forwards;
 }
 
 .animationLeftToCenter {
-  animation: leftToCenter 0.5s ease-in-out forwards;
+  animation: leftToCenter 1s ease-in-out forwards;
 }
 
-/* @keyframes delayLoadPseudoItem {
+@keyframes delayLoadPseudoItem {
   from {
     opacity: 0;
   }
 
   to {
-    opacity: .75;
+    opacity: 1;
   }
-} */
+}
 
 @keyframes centerToLeft {
   from {
     height: 100%;
-    top: 50%;
-    left: 50%;
+    inset: 50%;
     translate: -50% -50%;
     opacity: 1;
   }
 
-  80% {
+  70% {
     opacity: 0.75;
-    z-index: 10;
   }
 
-  100% {
+  to {
     opacity: 0;
-    left: -53vw;
-    top: 50%;
+    inset: 50% -52%;
     translate: 0 -50%;
     height: 85%;
     z-index: 10;
@@ -134,21 +116,19 @@
 
 @keyframes centerToRight {
   from {
-    opacity: 1;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
     height: 100%;
+    inset: 50%;
+    translate: -50% -50%;
+    opacity: 1;
   }
 
-  80% {
+  70% {
     opacity: 0.75;
-    z-index: 10;
   }
+
   to {
     opacity: 0;
-    right: -53vw;
-    top: 50%;
+    inset: 50% 87%;
     translate: 0 -50%;
     height: 85%;
     z-index: 10;
@@ -158,16 +138,18 @@
 @keyframes rightToCenter {
   from {
     opacity: 0;
-    right: -53vw;
-    top: 50%;
+    inset: 50% 87%;
     translate: 0 -50%;
     height: 85%;
   }
 
+  70% {
+    opacity: 0.75;
+  }
+
   to {
     opacity: 1;
-    top: 50%;
-    left: 50%;
+    inset: 50%;
     translate: -50% -50%;
     height: 100%;
   }
@@ -176,17 +158,19 @@
 @keyframes leftToCenter {
   from {
     opacity: 0;
-    left: -53vw;
+    left: -52%;
     top: 50%;
     translate: 0 -50%;
     height: 85%;
-    width: 50vw;
+  }
+
+  70% {
+    opacity: 0.75;
   }
 
   to {
     height: 100%;
-    top: 50%;
-    left: 50%;
+    inset: 50%;
     translate: -50% -50%;
     opacity: 1;
   }
@@ -206,6 +190,9 @@
 }
 
 @media (max-width: 768px) {
+  .carousel {
+    height: 35rem;
+  }
   .carouselItem {
     width: 100vw;
   }
@@ -216,6 +203,6 @@
   }
 
   .carouselBtnContainer {
-    padding: 0 2%;
+    padding: 0 3%;
   }
 }
