@@ -1,6 +1,7 @@
 # Implementation Logic
  1) On forward carousel button click carousel item 1 and 3 animates
  2) On backward carousel button click carousel item 2 and 4 animates
+
  3)There is also on setInterval setup which changes the carousel item after every 7s according to the logic of forward carousel animation
 
 
