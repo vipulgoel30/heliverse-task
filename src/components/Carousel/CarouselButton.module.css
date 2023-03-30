@@ -11,6 +11,7 @@
   color: #fff;
   font-size: 2.2rem;
   transition: all 0.2s;
+  box-shadow: 0px 4px 32px rgba(134, 134, 134, 0.56);
 }
 
 .btn:hover {
@@ -21,20 +22,16 @@
   scale: 0.95;
 }
 
-.btnLeft {
-  /* left: 5vw; */
-  box-shadow: -0rem 0 4rem 0.1rem rgba(255, 255, 255, 0.5);
-}
-
-.btnRight {
-  /* right: 5vw;s */
-  box-shadow: 0rem 0 4rem 0.1rem rgba(255, 255, 255, 0.5);
-}
-
 @media (max-width: 768px) {
   .btn {
     width: 3.2rem;
     height: 3.2rem;
     font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .btnBackward {
+    display: none;
   }
 }

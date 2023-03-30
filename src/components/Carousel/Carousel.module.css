@@ -1,7 +1,6 @@
 .carousel {
   margin: 2rem 0;
   height: 55rem;
-  /* height: 85vh; */
   position: relative;
   overflow: hidden;
 }
@@ -10,7 +9,7 @@
   position: absolute;
   z-index: 5;
   width: 65%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .carouselItem:nth-child(1) {
@@ -189,9 +188,27 @@
   padding: 0 6%;
 }
 
+@media (max-width: 1024px) {
+  .carousel {
+    height: 48rem;
+  }
+}
+
 @media (max-width: 768px) {
   .carousel {
+    height: 42rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .carousel {
     height: 35rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .carousel {
+    height: 30rem;
   }
   .carouselItem {
     width: 100vw;
@@ -203,6 +220,7 @@
   }
 
   .carouselBtnContainer {
-    padding: 0 3%;
+    justify-content: end;
+    padding: 0 4%;
   }
 }

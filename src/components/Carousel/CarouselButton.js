@@ -7,7 +7,7 @@ import {
 const CarouselButtonForward = (props) => {
   return (
     <button
-      className={`${classes.btnRight} ${classes.btn}`}
+      className={`${classes.btnForward} ${classes.btn}`}
       onClick={props.onClick}
     >
       <MdOutlineArrowForwardIos />
@@ -18,7 +18,7 @@ const CarouselButtonForward = (props) => {
 const CarouselButtonBackward = (props) => {
   return (
     <button
-      className={`${classes.btnRight} ${classes.btn}`}
+      className={`${classes.btnBackward} ${classes.btn}`}
       onClick={props.onClick}
     >
       <MdOutlineArrowBackIosNew />
