@@ -96,16 +96,7 @@ const Carousel = () => {
           alt=""
           className={`${classes.carouselItem}  ${itemClasses.four}`}
         />
-        {/* </div> */}
-        {/* <div className={`${classes.carouselItem}  ${itemClasses.second} `}>
-          Container 2
-        </div>
-        <div className={`${classes.carouselItem}  ${itemClasses.third}`}>
-          Container 3
-        </div>
-        <div className={`${classes.carouselItem}  ${itemClasses.four}`}>
-          Container 4
-        </div> */}
+
         <img
           src={PseudoFirstLeft}
           alt=""
@@ -146,23 +137,6 @@ const Carousel = () => {
           alt=""
           className={`${classes.carouselItem}  ${itemClasses.pseudoFourRight}`}
         />
-
-        {/* <div
-          className={`${classes.carouselItem}   ${itemClasses.pseudoFirst} `}
-        >
-          Pseudo 1
-        </div>
-        <div
-          className={`${classes.carouselItem}   ${itemClasses.pseudoSecond}`}
-        >
-          Pseudo 2
-        </div>
-        <div className={`${classes.carouselItem}   ${itemClasses.pseudoThird}`}>
-          Pseudo 3
-        </div>
-        <div className={`${classes.carouselItem}   ${itemClasses.pseudoFour}`}>
-          Pseudo 4
-        </div> */}
 
         <div className={classes.carouselBtnContainer}>
           <CarouselButtonBackward onClick={backBtnHandler} />

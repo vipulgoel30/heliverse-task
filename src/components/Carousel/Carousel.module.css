@@ -9,7 +9,6 @@
   position: absolute;
   z-index: 5;
   width: 65%;
-  /* overflow: hidden; */
 }
 
 .carouselItem:nth-child(1) {
